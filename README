@@ -1,0 +1,66 @@
+CSV to ICS Converter
+====================
+
+Ferramenta em Python para converter planilhas (CSV) em arquivos de calendário .ics (iCalendar). Compatível com Google Calendar, Outlook, Apple Calendar e outros.
+
+Ideal para transformar listas de tarefas, cronogramas ou datas comemorativas do Excel em eventos importáveis para sua agenda.
+
+📋 Pré-requisitos
+-----------------
+
+*   Python 3.8 ou superior
+
+🚀 Como Usar
+------------
+### 1. Prepare seu CSV
+
+Crie um arquivo CSV (ex: eventos.csv) com, no mínimo, uma coluna contendo a Data. A coluna de Assunto é opcional (se não existir ou estiver vazia, um nome padrão será usado).
+
+Exemplo (eventos.csv):
+
+    Assunto;Data
+    Reunião de Projeto;15/10/2025
+    Entrega Final;2025-12-01
+    ;25/12/2025
+
+(Nota: Na terceira linha, o assunto está vazio, então o script usará o valor padrão).
+
+### 2\. Execute o Script
+
+No terminal, execute o comando básico:
+
+    python main.py -i "eventos.csv"
+
+Isso irá gerar um arquivo calendario.ics no mesmo diretório.
+
+### 3\. Personalizando Colunas (Mapeamento)
+
+Se o seu CSV tem nomes de colunas diferentes (ex: "Nome do Evento" e "Dia"), você não precisa alterar a planilha. Basta informar ao script quais colunas usar:
+
+    python main.py -i dados.csv --col-subject "Nome do Evento" --col-date "Dia"
+  
+### 4\. Definindo Valor Padrão
+
+Se o CSV não tiver uma coluna de título, ou se algumas células estiverem vazias, você pode definir qual nome será usado para esses eventos:
+
+    python main.py -i dados.csv --default-subject "Lembrete Importante"
+
+(Se não informado, o padrão será "Evento Importado").
+
+⚙️ Argumentos Disponíveis
+-------------------------
+
+| Argumento | Descrição | Padrão |
+|---|---|---|
+| -i, --input | Caminho do arquivo CSV de entrada (Obrigatório). | - |
+| -o, --output | Nome do arquivo ICS gerado. | calendario.ics |
+| -d, --delimiter | Caractere separador do CSV. | ; |
+| --col-subject | Nome da coluna que contém o título do evento. | Assunto |
+| --col-date | Nome da coluna que contém a data. | Data |
+| --default-subject | Texto usado se o assunto estiver vazio/inexistente. | Evento Importado |
+
+
+📄 Licença
+----------
+
+Distribuído sob a licença MIT. Sinta-se à vontade para modificar e distribuir.
