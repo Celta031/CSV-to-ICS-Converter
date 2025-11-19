@@ -1,8 +1,21 @@
-CSV to ICS Converter
-====================
+# CSV to ICS Converter
 
-Ferramenta em Python para converter planilhas (CSV) em arquivos de calendário .ics (iCalendar). Compatível com Google Calendar, Outlook, Apple Calendar e outros.
+Conversor simples em Python para transformar um arquivo CSV em um calendário iCalendar (.ics). Compatível com Google Calendar, Outlook e Apple Calendar.
 
+## Recursos
+- Lê CSV com delimitador configurável (padrão `;`).
+- Suporte a formatos de data: `DD/MM/YYYY` e `YYYY-MM-DD`.
+- Coluna de assunto opcional — você pode definir um valor padrão.
+- Gera eventos com horário padrão (09:00–09:30) e lembrete 15 minutos antes.
+- Detecta encoding UTF-8 e faz fallback para CP1252.
+
+## Requisitos
+- Python 3.8+
+
+## Uso rápido
+```sh
+python [main.py](http://_vscodecontentref_/7) -i "eventos.csv"ook, Apple Calendar e outros.
+```
 Ideal para transformar listas de tarefas, cronogramas ou datas comemorativas do Excel em eventos importáveis para sua agenda.
 
 📋 Pré-requisitos
